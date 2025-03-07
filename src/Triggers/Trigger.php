@@ -89,6 +89,9 @@ class Trigger extends Model
             $this->checkConditions($model, $dataBus);
         } catch (\Exception $e) {
             $log->setError($e->getMessage(), $dataBus);
+            if(config('workflows.debug')) {
+                throw $e;
+            }
             exit;
         }
 

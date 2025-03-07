@@ -2,7 +2,9 @@
 
 namespace the42coders\Workflows\Tasks;
 
-class Execute extends Task
+use Illuminate\Support\Facades\Artisan;
+
+class RunCommand extends Task
 {
     public static $fields = [
         'Command' => 'command',
@@ -16,8 +18,7 @@ class Execute extends Task
 
     public function execute(): void
     {
-        chdir(base_path());
-        dd(shell_exec($this->getData('command').' 2>&1'));
-        $this->setData('command_output', shell_exec($this->getData('command')));
+
+        $this->setData('command_output', Artisan::call($this->getData('command')));
     }
 }

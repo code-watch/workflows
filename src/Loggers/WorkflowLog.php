@@ -19,9 +19,9 @@ class WorkflowLog extends Model
 
     private $taskLogsArray = [];
 
-    protected $dates = [
-        'start',
-        'end',
+    protected $casts = [
+        'start' => 'datetime',
+        'end' => 'datetime',
     ];
 
     protected $fillable = [

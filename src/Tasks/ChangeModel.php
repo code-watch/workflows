@@ -18,7 +18,7 @@ class ChangeModel extends Task
 
     public function execute(): void
     {
-        $model = $this->getData('model');
+        $model = $this->getData('model') ?? $this->dataBus->model;
         $field = $this->getData('field');
         $value = $this->getData('value');
 

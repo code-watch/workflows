@@ -15,6 +15,8 @@ return [
         'SaveModel' => 'Save Model',
         'SendSlackMessage' => 'Send Slack Message',
         'TextInput' => 'Text Input',
+        'OpenAiTask' => 'OpenAi Task',
+        'RunCommand' => 'RunCommand',
     ],
     'Resources' => [
         'ValueResource' => 'From Direct Input',
